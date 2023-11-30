@@ -14,6 +14,26 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            maxWidth: {
+                '1000px' : '62.5rem',
+            },
+            spacing: {
+                70: '17.5rem',
+                175: '43.75rem',
+            },
+            colors: {
+                black : '#000000',
+                white : '#ffffff',
+                transparent: 'transparent',
+                current: 'currentColor',
+                'blue': '#328af1',
+                'blue-hover': '#2879bd',
+                'yellow' : '#ffc73c',
+                'red' : '#ec454f',
+                'green' : '#1aab8b',
+                'purple' : '#8b60ed',
+                'pink' : '#ffafcc',
+            }
         },
     },
 

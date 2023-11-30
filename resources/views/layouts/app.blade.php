@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 text-sm">
-        <header class="flex items-center justify-between px-8 py-4">
-            <a href="">App logo</a>
-            <div class="flex items-center">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
+
+<body class="font-sans bg-gray-100 text-gray-900 text-sm">
+    <header class="flex items-center justify-between px-8 py-4">
+        <a href="#"><img src="{{ asset('img/logo.svg') }}" width="200px" alt="logo"></a>
+        <div class="flex items-center">
             @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 z-10">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+            <div class="px-6 py-4">
+                @auth
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-            </div>
-            <div>
-                @if (!Route::has('login'))
-                    <!-- <a href="#">
-                        <img src="https://gravatar.com/userimage/243271590/283809fe73f12c71cf868de80a869e5e.jpeg?size=256" alt="avatar" class="w-10 h-10 rounded-full">
-                    </a> -->
-                    
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                        {{ __('Log out') }}
+                    </a>
+                </form>
+                @else
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+
+                @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                 @endif
+                @endauth
             </div>
-        </header>
-    </body>
+            @endif
+            <a href="#">
+                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" alt="avatar" class="w-10 h-10 rounded-full">
+            </a>
+        </div>
+    </header>
+    <main class="container mx-auto max-w-1000px flex">
+        <div class="w-70 mr-5">
+            idea form. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem autem quibusdam optio voluptates, ullam nam at accusantium, rem officia aut neque magni officiis aliquid blanditiis voluptate, eaque amet asperiores dicta vel est! Blanditiis accusamus, suscipit, reprehenderit ea earum fugit doloribus minima nisi, vel beatae eum. Modi quod officia eos ipsum.
+        </div>
+        <div class="w-175">
+            <nav class="flex items-center justify-between text-xs">
+                <ul class="flex uppercase font-semibold space-x-10 border-b-4 pb-3">
+                    <li><a href="" class="border-b-4 pb-3 border-pink">All Ideas (26)</a></li>
+                    <li><a href="" class="text-gray-400 transititon duration-150 ease-in border-b-4 pb-3 hover:border-pink">Considering (6)</a></li>
+                    <li><a href="" class="text-gray-400 transititon duration-150 ease-in border-b-4 pb-3 hover:border-pink">In progess (6)</a></li>
+                </ul>
+                <ul class="flex uppercase font-semibold space-x-10 border-b-4 pb-3">
+                    <li><a href="" class="text-gray-400 transititon duration-150 ease-in border-b-4 pb-3 hover:border-pink">Implemented (2)</a></li>
+                    <li><a href="" class="text-gray-400 transititon duration-150 ease-in border-b-4 pb-3 hover:border-pink">Closed (5)</a></li>
+                </ul>
+            </nav>
+            <div class="mt-8">
+                {{ $slot }}
+            </div>
+        </div>
+    </main>
+</body>
+
 </html>
