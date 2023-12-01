@@ -14,10 +14,16 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            fontSize: {
+                xxs: ['0.625rem', { lineHeight: '1rem' }],
+            },
             maxWidth: {
                 '1000px' : '62.5rem',
             },
+            
             spacing: {
+                38: '9.5rem',
+                44: '11rem',
                 70: '17.5rem',
                 175: '43.75rem',
             },
@@ -32,7 +38,9 @@ export default {
                 'red' : '#ec454f',
                 'green' : '#1aab8b',
                 'purple' : '#8b60ed',
+                'light-pink': '#ffc8dd',
                 'pink' : '#ffafcc',
+                'strong-pink' : '#ff8bbd',
             }
         },
     },
