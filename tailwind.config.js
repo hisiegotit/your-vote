@@ -20,7 +20,10 @@ export default {
             maxWidth: {
                 '1000px' : '62.5rem',
             },
-            
+            boxShadow: {
+                card: '4px 4px 15px 0 rgba(36, 37, 38, 0.08)',
+                dialog: '3px 4px 15px 0 rgba(36, 37, 38, 0.22)',
+            },
             spacing: {
                 38: '9.5rem',
                 44: '11rem',
