@@ -47,11 +47,16 @@
     </header>
     <main class="container mx-auto max-w-1000px flex">
         <div class="w-70 mr-5">
-            <div class="border-2 border-pink rounded-xl mt-16">
+            <div class="bg-white border-2 border-pink rounded-xl mt-16">
                 <div class="text-center px-6 py-2 pt-6">
                     <h3 class="font-semibold">Add an idea</h3>
                     <p class="text-xs mt-4">Let us know what you would like and we'll take a look over!</p>
                 </div>
+                <form action="#" method="POST" class="space-y-4 px-4 py-6">
+                    <div>
+                        <input type="text" class="w-full bg-gray-100 border-none text-sm rounded-xl placeholder-gray-900 px-4 py-2" placeholder="Your idea">
+                    </div>
+                </form>
             </div>
         </div>
         <div class="w-175">
