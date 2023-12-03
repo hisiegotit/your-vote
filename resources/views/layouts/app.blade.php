@@ -47,7 +47,12 @@
     </header>
     <main class="container mx-auto max-w-1000px flex">
         <div class="w-70 mr-5">
-            idea form. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem autem quibusdam optio voluptates, ullam nam at accusantium, rem officia aut neque magni officiis aliquid blanditiis voluptate, eaque amet asperiores dicta vel est! Blanditiis accusamus, suscipit, reprehenderit ea earum fugit doloribus minima nisi, vel beatae eum. Modi quod officia eos ipsum.
+            <div class="border-2 border-pink rounded-xl mt-16">
+                <div class="text-center px-6 py-2 pt-6">
+                    <h3 class="font-semibold">Add an idea</h3>
+                    <p class="text-xs mt-4">Let us know what you would like and we'll take a look over!</p>
+                </div>
+            </div>
         </div>
         <div class="w-175">
             <nav class="flex items-center justify-between text-xs">
