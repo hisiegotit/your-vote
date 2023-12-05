@@ -44,7 +44,11 @@ export default {
                 'light-pink': '#ffc8dd',
                 'pink' : '#ffafcc',
                 'strong-pink' : '#ff8bbd',
-            }
+            },
+            margin: {
+                '6': '1.5rem',
+                '22': '5.5rem',
+            },
         },
     },
 

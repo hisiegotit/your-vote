@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* vertical line between comments */
+.comments-container::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -36px;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: black;
+    opacity: .07;
+}
+
+/* horizontal line between comments */
+.comment-container::before {
+    position: relative;
+    display: block;
+    top: 57px;
+    content: "";
+    width: 23px;
+    height: 3px;
+    background: #212529;
+    left: -34px;
+    opacity: .07;
+}

@@ -83,7 +83,8 @@
                         </button>
                     </div>
                 </form>
-            </div>
+            </div>	
+
         </div>
         <div class="w-175">
             <nav class="flex items-center justify-between text-xs">
