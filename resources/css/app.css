@@ -50,3 +50,8 @@
     background: theme('colors.pink');
     opacity: 1;
 }
+
+.is-admin {
+    border-width: 1px;
+    border-color: theme('colors.pink');
+}

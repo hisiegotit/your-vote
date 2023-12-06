@@ -28,7 +28,9 @@ export default {
                 38: '9.5rem',
                 44: '11rem',
                 70: '17.5rem',
+                76: '19rem',
                 175: '43.75rem',
+                104: '26rem',
             },
             colors: {
                 black : '#000000',
