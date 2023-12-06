@@ -35,6 +35,7 @@ export default {
                 white : '#ffffff',
                 transparent: 'transparent',
                 current: 'currentColor',
+                'gray-background': '#f3f4f6',
                 'blue': '#328af1',
                 'blue-hover': '#2879bd',
                 'yellow' : '#ffc73c',

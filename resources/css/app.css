@@ -11,19 +11,42 @@
     content: "";
     width: 3px;
     height: 100%;
-    background: black;
+    background: theme('colors.black');
     opacity: .07;
 }
 
 /* horizontal line between comments */
 .comment-container::before {
-    position: relative;
+    position: absolute;
     display: block;
     top: 57px;
     content: "";
     width: 23px;
     height: 3px;
-    background: #212529;
+    background: theme('colors.black');
     left: -34px;
     opacity: .07;
+}
+
+.comment-container:last-child::after {
+    position: absolute;
+    display: block;
+    top: 60px;
+    left: -40px;
+    content: "";
+    width: 3%;
+    height: calc(100% - 60px);
+    background: theme('colors.gray-background');
+}
+
+.is-admin::before {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border-radius: 38px;
+    border: 7px solid white;
+    box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08);
+    left: -54px;
+    background: theme('colors.pink');
+    opacity: 1;
 }
