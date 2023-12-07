@@ -11,7 +11,19 @@
     content: "";
     width: 3px;
     height: 100%;
-    background: theme('colors.black');
+    background: theme('colors.white');
+    opacity: .07;
+}
+
+.comments-container-dark::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -36px;
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: theme('colors.white');
     opacity: .07;
 }
 
@@ -23,10 +35,23 @@
     content: "";
     width: 23px;
     height: 3px;
-    background: theme('colors.black');
+    background: theme('colors.white');
     left: -34px;
     opacity: .07;
 }
+
+.comment-container-dark::before {
+    position: absolute;
+    display: block;
+    top: 57px;
+    content: "";
+    width: 23px;
+    height: 3px;
+    background: theme('colors.white');
+    left: -34px;
+    opacity: .07;
+}
+
 
 .comment-container:last-child::after {
     position: absolute;
@@ -36,7 +61,7 @@
     content: "";
     width: 3%;
     height: calc(100% - 60px);
-    background: theme('colors.gray-background');
+    background: theme('colors.dark-background');
 }
 
 .is-admin::before {

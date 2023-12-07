@@ -2,6 +2,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
+
 export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
@@ -33,7 +34,7 @@ export default {
                 104: '26rem',
             },
             colors: {
-                black : '#000000',
+                black : '#212529',
                 white : '#ffffff',
                 transparent: 'transparent',
                 current: 'currentColor',
@@ -47,6 +48,8 @@ export default {
                 'light-pink': '#ffc8dd',
                 'pink' : '#ffafcc',
                 'strong-pink' : '#ff8bbd',
+                'dark-background' : '#1b1b3a',
+                'dark-dialog' : '#23395b',
             },
             margin: {
                 '6': '1.5rem',
