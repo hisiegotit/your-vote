@@ -63,14 +63,21 @@
                      <div>&bull;</div>
                      <div class="text-gray-800 dark:text-white">3 comments</div>
                   </div>
-                  <div class="flex items-center space-x-2">
+                  <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
                      <div class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4 dark:bg-dark-background dark:text-light-pink dark:hover:text-dark-background dark:hover:bg-light-pink transition duration-150 ease-in">Open</div>
                   </div>
-                  <button class="relative text-left border border-gray-100 transition duration-150 hover:border-gray-400 bg-gray-100 hover:bg-gray-200 rounded-full h-7 dark:bg-dark-background dark:text-light-pink dark:hover:text-dark-background dark:hover:bg-light-pink dark:border-none">
+                  <div >
+                  <button
+                  x-on:click="isOpen = !isOpen"  
+                  class="relative text-left border border-gray-100 transition duration-150 hover:border-gray-400 bg-gray-100 hover:bg-gray-200 rounded-full h-7 dark:bg-dark-background dark:text-light-pink dark:hover:text-dark-background dark:hover:bg-light-pink dark:border-none">
                      <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                      </svg>
-                     <ul class="hidden absolute w-38 font-semibold bg-white shadow-dialog rounded-xl py-3 ml-4 dark:backdrop-blur-md dark:bg-white/20 dark:backdrop-filter">
+                     <ul
+                        x-show="isOpen"
+                        @click.away="isOpen = false"
+                        class="absolute w-38 font-semibold bg-white shadow-dialog rounded-xl py-3 ml-4 dark:backdrop-blur-md dark:bg-white/20 dark:backdrop-filter"
+                     >
                         <li><a href="#" class="hover:bg-gray-100 block transition ease-in duration-150 px-5 py-3 dark:backdrop-blur-md dark:bg-white/0 dark:backdrop-filter dark:hover:bg-white/10 dark:hover:text-pink">Mark as spam</a></li>
                         <li><a href="#" class="hover:bg-gray-100 block transition ease-in duration-150 px-5 py-3 dark:backdrop-blur-md dark:bg-white/0 dark:backdrop-filter dark:hover:bg-white/10 dark:hover:text-pink">Delete post</a></li>
                      </ul>
