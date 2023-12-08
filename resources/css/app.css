@@ -2,45 +2,45 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-[x-cloak] {
-    display: none !important;
-}
+[x-cloak] { display: none !important; }
 
 /* vertical line between comments */
 .comments-container::before {
     position: absolute;
     display: block;
     top: 0;
-    left: -36px;
+    left: -40px;
     content: "";
     width: 3px;
     height: 100%;
-    background: theme('colors.white');
-    opacity: .07;
+    background: theme('colors.light-pink');
+    opacity: 0.5;
 }
 
-/* horizontal line between comments */
+/* horizontal line to the left of the comments */
 .comment-container::before {
     position: absolute;
     display: block;
     top: 57px;
+    left: -40px;
     content: "";
     width: 23px;
     height: 3px;
-    background: theme('colors.white');
-    left: -34px;
-    opacity: .07;
+    background: theme('colors.light-pink');
+    opacity: 0.5;
 }
 
+/* remove last vertical line */
 .comment-container:last-child::after {
     position: absolute;
     display: block;
     top: 60px;
     left: -40px;
     content: "";
-    width: 3%;
+    width: 3px;
     height: calc(100% - 60px);
-    background: theme('colors.dark-background');
+    background: theme('colors.light-pink');
+    opacity: 0.5;
 }
 
 .is-admin::before {
@@ -50,7 +50,7 @@
     border-radius: 38px;
     border: 7px solid white;
     box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08);
-    left: -54px;
+    left: -58px;
     background: theme('colors.pink');
     opacity: 1;
 }

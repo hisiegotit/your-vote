@@ -48,8 +48,6 @@ export default {
                 'light-pink': '#ffc8dd',
                 'pink' : '#ffafcc',
                 'strong-pink' : '#ff8bbd',
-                'dark-background' : '#1b1b3a',
-                'dark-dialog' : '#23395b',
             },
             margin: {
                 '6': '1.5rem',
