@@ -63,10 +63,10 @@
                      <div>&bull;</div>
                      <div class="text-gray-800 dark:text-white">3 comments</div>
                   </div>
-                  <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
+                  <div class="flex items-center space-x-2">
                      <div class="bg-gray-200 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4 dark:bg-dark-background dark:text-light-pink dark:hover:text-dark-background dark:hover:bg-light-pink transition duration-150 ease-in">Open</div>
                   </div>
-                  <div >
+                  <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
                   <button
                   x-on:click="isOpen = !isOpen"  
                   class="relative text-left border border-gray-100 transition duration-150 hover:border-gray-400 bg-gray-100 hover:bg-gray-200 rounded-full h-7 dark:bg-dark-background dark:text-light-pink dark:hover:text-dark-background dark:hover:bg-light-pink dark:border-none">
