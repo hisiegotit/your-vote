@@ -2,20 +2,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* vertical line between comments */
-.comments-container::before {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: -36px;
-    content: "";
-    width: 3px;
-    height: 100%;
-    background: theme('colors.white');
-    opacity: .07;
+[x-cloak] {
+    display: none !important;
 }
 
-.comments-container-dark::before {
+/* vertical line between comments */
+.comments-container::before {
     position: absolute;
     display: block;
     top: 0;
@@ -39,19 +31,6 @@
     left: -34px;
     opacity: .07;
 }
-
-.comment-container-dark::before {
-    position: absolute;
-    display: block;
-    top: 57px;
-    content: "";
-    width: 23px;
-    height: 3px;
-    background: theme('colors.white');
-    left: -34px;
-    opacity: .07;
-}
-
 
 .comment-container:last-child::after {
     position: absolute;
