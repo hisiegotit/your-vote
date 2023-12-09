@@ -13,8 +13,7 @@
     content: "";
     width: 3px;
     height: 100%;
-    background: theme('colors.light-pink');
-    opacity: 0.5;
+    background: theme('colors.maroon');
 }
 
 /* horizontal line to the left of the comments */
@@ -26,8 +25,7 @@
     content: "";
     width: 23px;
     height: 3px;
-    background: theme('colors.light-pink');
-    opacity: 0.5;
+    background: theme('colors.maroon');
 }
 
 /* remove last vertical line */
@@ -39,8 +37,7 @@
     content: "";
     width: 3px;
     height: calc(100% - 60px);
-    background: theme('colors.light-pink');
-    opacity: 0.5;
+    background: theme('colors.maroon');
 }
 
 .is-admin::before {
@@ -51,11 +48,11 @@
     border: 7px solid white;
     box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08);
     left: -58px;
-    background: theme('colors.pink');
+    background: theme('colors.maroon');
     opacity: 1;
 }
 
 .is-admin {
     border-width: 1px;
-    border-color: theme('colors.pink');
+    border-color: theme('colors.maroon');
 }
