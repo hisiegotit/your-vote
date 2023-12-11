@@ -17,7 +17,7 @@
     <livewire:styles />
 </head>
 
-<body class="font-sans bg-base text-maroon text-sm">
+<body class=" area font-sans bg-base text-maroon text-sm">
     <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
         <a href="#" class="block"><img src="{{ asset('img/logo.svg') }}" width="200px" alt="logo"></a>
         <div class="flex items-center mt-2 md:mt-0">
@@ -123,6 +123,7 @@
         </div>
     </main>
     <livewire:scripts />
+
 </body>
 
 </html>
