@@ -24,6 +24,11 @@ class Idea extends Model
         return $this->belongsTo(Category::class); // category_id
     }
 
+    public function status()
+    {
+        return $this->belongsTo(Status::class); // status_id
+    }
+
     public function sluggable(): array
     {
         return [

@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Category;
 use App\Models\Idea;
+use App\Models\Status;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
@@ -23,15 +24,20 @@ class ShowIdeasTest extends TestCase
             'name' => 'Category 2'
         ]);
 
+        $statusConsidering = Status::factory()->create(['name' => 'Considering', 'classes' => 'bg-mauve text-base']);
+        $statusProgess = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+
         $ideaOne = Idea::factory()->create([
             'title' => 'My First Idea',
             'category_id' => $categoryOne->id,
+            'status_id' => $statusConsidering->id,
             'description' => 'Description of my first idea',
         ]);
 
         $ideaTwo = Idea::factory()->create([
             'title' => 'My Second Idea',
             'category_id' => $categoryTwo->id,
+            'status_id' => $statusProgess->id,
             'description' => 'Description of my second idea',
         ]);
 
@@ -42,9 +48,11 @@ class ShowIdeasTest extends TestCase
         $response->assertSee($ideaOne->title);
         $response->assertSee($ideaOne->description);
         $response->assertSee($ideaOne->category->name);
+        $response->assertSee($ideaOne->status->name);
         $response->assertSee($ideaTwo->title);
         $response->assertSee($ideaTwo->description);
         $response->assertSee($ideaTwo->category->name);
+        $response->assertSee($ideaTwo->status->name);
     }
 
     /** @test */
@@ -54,9 +62,12 @@ class ShowIdeasTest extends TestCase
             'name' => 'Category 1'
         ]);
 
+        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+
         $idea = Idea::factory()->create([
             'title' => 'My First Idea',
             'category_id' => $category->id,
+            'status_id' => $status->id,
             'description' => 'Description of my first idea',
         ]);
 
@@ -67,6 +78,7 @@ class ShowIdeasTest extends TestCase
         $response->assertSee($idea->title);
         $response->assertSee($idea->description);
         $response->assertSee($idea->category->name);
+        $response->assertSee($idea->status->name);
     }
 
     /** @test */
@@ -77,9 +89,13 @@ class ShowIdeasTest extends TestCase
             'name' => 'Category 1'
         ]);
 
+        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+
         Idea::factory(Idea::PAGINATION_COUNT + 1)->create([
             'category_id' => $category->id,
+            'status_id' => $status->id,
         ]);
+
 
         $ideaOne = Idea::find(1);
         $ideaOne->title = 'My First Idea';

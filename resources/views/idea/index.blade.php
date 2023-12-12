@@ -80,8 +80,8 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <div
-                                    class="bg-overlay0 text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4 transition duration-150 ease-in border border-overlay0 hover:border-maroon">
-                                    Open</div>
+                                    class="{{ $idea->status->classes }} text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
+                                    {{ $idea->status->name }}</div>
                             </div>
                             <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
                                 <button x-on:click="isOpen = !isOpen"
@@ -91,7 +91,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                                     </svg>
-                                    <ul x-cloak x-show="isOpen" x-transition @click.away="isOpen = false"
+                                    <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
                                         class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4">
                                         <li><a href="#"
                                                 class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark

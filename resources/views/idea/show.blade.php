@@ -37,6 +37,11 @@
                         <div>&bull;</div>
                         <di>3 comments</di>
                     </div>
+                    <div class="flex items-center space-x-2">
+                        <div
+                            class="{{ $idea->status->classes }} text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
+                            {{ $idea->status->name }}</div>
+                    </div>
                     <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
                         <button x-on:click="isOpen = !isOpen"
                             class="relative text-left transition duration-150  bg-overlay0 border border-overlay0 hover:border-maroon rounded-full h-7">
@@ -45,7 +50,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                             </svg>
-                            <ul x-cloak x-show="isOpen" x-transition @click.away="isOpen = false"
+                            <ul x-cloak x-show="isOpen"
+                             @click.away="isOpen = false"
                                 class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4">
                                 <li><a href="#"
                                         class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark
@@ -72,7 +78,10 @@
                     </svg>
                     <span class="ml-1"> Reply</span>
                 </button>
-                <div x-cloak x-show = "isOpen" x-transition.origin.top.left.duration.200ms @click.away="isOpen = false"
+                <div
+                x-cloak
+                x-show = "isOpen"
+                @click.away="isOpen = false"
                     class="absolute z-10 w-104 text-left font-semibold text-sm bg-surface1 shadow-dialog rounded-xl mt-2">
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div>
@@ -107,14 +116,16 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                     </svg>
                 </button>
-                <div x-cloak x-show = "isOpen" x-transition.origin.top.left.duration.200ms @click.away="isOpen = false"
+                <div 
+                @click.away = "isOpen = false"
+                x-cloak x-show = "isOpen"
                     class="absolute z-20 w-76 text-left font-semibold text-sm bg-surface1 shadow-dialog rounded-xl mt-2">
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div class="space-y-2">
                             <div>
                                 <label class="inline-flex items-center">
                                     <input type="radio" checked=""
-                                        class="text-maroon border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                        class="text-pink border-none bg-text focus:outline-none focus:ring focus:ring-pink"
                                         name="status" value="1">
                                     <span class="ml-2">Open</span>
                                 </label>
