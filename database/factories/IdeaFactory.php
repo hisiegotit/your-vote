@@ -19,6 +19,7 @@ class IdeaFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
+            'category_id' => rand(1, 4),
             'title' => ucwords($this->faker->words(4, true)),
             'description' => $this->faker->paragraphs(5, true),
         ];

@@ -30,7 +30,7 @@
     </div> <!-- end filters -->
 
     @foreach ($ideas as $idea)
-        <div class="ideas-container space-y-6 my-8 ">
+        <div class="ideas-container space-y-6 my-8">
             <div x-data
                 @click="
                 const target = $event.target.tagName.toLowerCase();
@@ -74,7 +74,7 @@
                             <div class="flex items-center text-xs text-subtext1 font-semibold space-x-2">
                                 <div>{{ $idea->created_at->diffForHumans() }}</div>
                                 <div>&bull;</div>
-                                <div>Category 1</div>
+                                <div>{{ $idea->category->name }}</div>
                                 <div>&bull;</div>
                                 <div>3 comments</div>
                             </div>
