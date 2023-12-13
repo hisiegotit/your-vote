@@ -53,47 +53,24 @@
             <div class="bg-surface0 border-2 border-maroon rounded-xl mt-16 md:sticky md:top-8">
                 <div class="text-center px-6 py-2 pt-6">
                     <h3 class="font-semibold">Add an idea</h3>
+                    @auth
                     <p class="text-xs mt-4">Let us know what you would like and we'll take a look over!</p>
+                        @else
+                        <p class="text-lg mt-4">Login and create an idea.</p>
+                        @endauth
                 </div>
-                <form action="#" method="POST" class="space-y-4 px-4 py-6">
-                    <div>
-                        <input type="text"
-                            class="w-full bg-overlay0 border-none text-sm text-maroon rounded-xl placeholder-maroon px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
-                            placeholder="Your idea">
-                    </div>
-                    <div>
-                        <select name="add_category" id="add_category"
-                            class="w-full bg-overlay0 border-none text-sm text-maroon rounded-xl focus:outline-none focus:ring focus:ring-maroon placeholder-maroon px-4 py-2">
-                            <option value="cate1">Category</option>
-                            <option value="cate2">Category 2</option>
-                            <option value="cate3">Category 3</option>
-                            <option value="cate4">Category 4</option>
-                        </select>
-                    </div>
-                    <div>
-                        <textarea name="idea" id="idea" cols="30" rows="10"
-                            class="border-none w-full bg-overlay0 rounded-xl placeholder-maroon text-sm text-maroon px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
-                            placeholder="Describe your idea"></textarea>
-                    </div>
-                    <div class="flex items-center justify-between space-x-3">
-                        <button type="button"
-                            class="flex items-center justify-center w-1/2 h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
-                            <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-5 text-maroon">
-                                <path fill-rule="evenodd"
-                                    d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="ml-1"> Attach</span>
-                        </button>
-                        <button type="submit"
-                            class="flex items-center justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
-                            <path
-                                d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
-                            </svg>
-                            <span class="ml-1"> Submit</span>
-                        </button>
-                    </div>
-                </form>
+                @auth
+                    <livewire:create-idea />
+                @else
+                <div class="my-6 text-center">
+                    <a href="{{ Route('login') }}" class="inline-block justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
+                    <span class="ml-1">Login</span>
+                    </a>
+                    <a href="{{ Route('register') }}" class="inline-block justify-center w-1/2 h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3 mt-4">
+                    <span class="ml-1">Sign Up</span>
+                    </a>
+                </div>
+                @endauth
             </div>
 
         </div>

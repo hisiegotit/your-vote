@@ -233,7 +233,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                                     </svg>
-                                    <ul x-cloak x-show="isOpen" x-transition @click.away="isOpen = false"
+                                    <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
                                         class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4">
                                         <li><a href="#"
                                                 class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark
@@ -282,7 +282,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                                     </svg>
-                                    <ul x-cloak x-show="isOpen" x-transition @click.away="isOpen = false"
+                                    <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
                                         class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4">
                                         <li><a href="#"
                                                 class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark
@@ -322,7 +322,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round"
                                             d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                                     </svg>
-                                    <ul x-cloak x-show="isOpen" x-transition @click.away="isOpen = false"
+                                    <ul x-cloak x-show="isOpen" @click.away="isOpen = false"
                                         class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4">
                                         <li><a href="#"
                                                 class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark
