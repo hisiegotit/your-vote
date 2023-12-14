@@ -5,6 +5,11 @@
             type="text"
             class="w-full bg-overlay0 border-none text-sm text-maroon rounded-xl placeholder-maroon px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
             placeholder="Your idea">
+        <p>
+            @error('title')
+                <span class="text-red text-xs mt-1">{{ $message }}</span>
+            @enderror
+        </p>
     </div>
     <div>
         <select wire:model.refer="category" name="add_category" id="add_category"
@@ -13,11 +18,21 @@
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
+        <p>
+            @error('category')
+                <span class="text-red text-xs mt-1">{{ $message }}</span>
+            @enderror
+        </p>
     </div>
     <div>
         <textarea wire:model.refer="description" name="idea" id="idea" cols="30" rows="10"
             class="border-none w-full bg-overlay0 rounded-xl placeholder-maroon text-sm text-maroon px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
             placeholder="Describe your idea"></textarea>
+        <p>
+            @error('description')
+                <span class="text-red text-xs mt-1">{{ $message }}</span>
+            @enderror
+        </p>
     </div>
     <div class="flex items-center justify-between space-x-3">
         <button type="button"
@@ -38,8 +53,7 @@
         </button>
     </div>
 
-    <div>
-        @if (session('success'))
+    @if (session('success'))
             <div
                 x-data="{ isVisible: true }"
                 x-init="
@@ -52,5 +66,4 @@
                 {{ session('success') }}
             </div>
         @endif
-    </div>
 </form>
