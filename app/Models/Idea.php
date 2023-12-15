@@ -29,6 +29,11 @@ class Idea extends Model
         return $this->belongsTo(Status::class); // status_id
     }
 
+    public function votes()
+    {
+        return $this->belongsToMany(User::class, 'votes'); // idea_id
+    }
+
     public function sluggable(): array
     {
         return [
