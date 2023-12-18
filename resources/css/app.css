@@ -4,6 +4,11 @@
 
 [x-cloak] { display: none !important; }
 
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 /* vertical line between comments */
 .comments-container::before {
     position: absolute;

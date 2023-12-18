@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
 
         Idea::factory(100)->create();
 
+
         foreach (range(1, 20) as $user_id) {
             foreach (range(1, 100) as $idea_id) {
                 if ($idea_id % 2 === 0) {
