@@ -17,10 +17,18 @@
             </div>
 
             <div class="mt-8">
+                @if ($hasVoted)
+                    
                 <button
-                    class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
-                    Vote
-                </button>
+                class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon disabled cursor-default" disabled>
+                Voted
+            </button>
+            @else
+            <button
+            class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
+            Vote
+        </button>
+        @endif
             </div>
         </div>
         <div class="flex flex-1 px-2 py-6">
