@@ -17,7 +17,7 @@
     <livewire:styles />
 </head>
 
-<body class="area font-sans bg-base text-maroon text-sm">
+<body class="area font-sans bg-base text-white text-sm">
     <header class="flex flex-col md:flex-row items-center justify-between px-8 py-4">
         <a href="#" class="block"><img src="{{ asset('img/logo.svg') }}" width="200px" alt="logo"></a>
         <div class="flex items-center mt-2 md:mt-0">
@@ -76,7 +76,7 @@
         </div>
         <div class="px-0 w-175">
             <nav class="flex items-center justify-between text-xs">
-                <ul class="flex uppercase font-semibold space-x-10 border-b-3 pb-3">
+                <ul class="flex uppercase font-semibold text-maroon space-x-10 border-b-3 pb-3">
                     <li><a href="" class="border-b-4 pb-3 border-maroon">All Ideas (26)</a></li>
                     <li><a href=""
                             class="text-subtext0 transititon duration-150 ease-in border-b-4 pb-3 border-base hover:border-maroon hover:border-b-5">Considering

@@ -12,23 +12,26 @@
         class="idea-container hover:shadow-card transition ease-out duration-150 bg-surface0 rounded-xl flex cursor-pointer">
         <div class="border-r border-maroon border-opacity-60 px-5 py-8">
             <div class="text-center">
-                <div class="font-semibold text-2xl">{{ $idea->votes_count }}</div>
+                @if ($hasVoted)
+                    <div class="font-semibold text-2xl text-maroon">{{ $idea->votes_count }}</div>
+                @else
+                    <div class="font-semibold text-2xl">{{ $idea->votes_count }}</div>
+                @endif
                 <div class="text-subtext0">Votes</div>
             </div>
 
             <div class="mt-8">
                 @if ($hasVoted)
-                    
-                <button
-                class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon disabled cursor-default" disabled>
-                Voted
-            </button>
-            @else
-            <button
-            class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
-            Vote
-        </button>
-        @endif
+                    <button
+                    class="w-20 bg-maroon font-bold text-surface1 text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-maroon hover:border-overlay0">
+                        Unvote
+                    </button>
+                @else
+                    <button
+                    class="w-20 bg-overlay0 font-bold text-xxs uppercase rounded-xl px-4 py-3 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
+                        Vote
+                    </button>
+                @endif
             </div>
         </div>
         <div class="flex flex-1 px-2 py-6">

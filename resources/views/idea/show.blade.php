@@ -67,7 +67,7 @@
                 </div>
                 <div class="w-full mx-4">
                     <h4 class="text-xl font-semibold">
-                        <a href="" class="hover:underline">
+                        <a href="" class="hover:underline text-maroon">
                             Status changed to "Under consideration"
                         </a>
                     </h4>

@@ -60,7 +60,7 @@
         <div class="flex items-center space-x-4 ml-6">
             <div x-data="{ isOpen: false }" class="relative">
                 <button @click="isOpen = !isOpen" type="button"
-                    class="flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3">
+                    class="flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon text-surface1 font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3">
                     <path fill-rule="evenodd"
                         d="M4.804 21.644A6.707 6.707 0 006 21.75a6.721 6.721 0 003.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 01-.814 1.686.75.75 0 00.44 1.223zM8.25 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM10.875 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zm4.875-1.125a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z"
                         clip-rule="evenodd" />
@@ -75,7 +75,7 @@
                     <form action="#" class="space-y-4 px-4 py-6">
                         <div>
                             <textarea name="post_comment" id="post_comment" cols="30" rows="4"
-                                class="w-full text-sm bg-overlay1 rounded-xl placeholder-maroon border-none px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
+                                class="w-full text-sm bg-overlay1 rounded-xl placeholder-white border-none px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
                                 placeholder="Go ahead. Share your thoughts..."></textarea>
                         </div>
                         <div class="flex items-center space-x-3">
@@ -84,8 +84,8 @@
                                 <span>Post Comment</span>
                             </button>
                             <button type="button"
-                                class="flex items-center justify-center w-1/2 h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
-                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-5 text-maroon">
+                                class="flex items-center justify-center w-1/2 h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
+                                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-5">
                                     <path fill-rule="evenodd"
                                         d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
                                         clip-rule="evenodd" />
@@ -99,7 +99,7 @@
 
             <div x-data = "{ isOpen: false }" class="relative">
                 <button @click = "isOpen = !isOpen" type="button"
-                    class="flex items-center justify-center h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
+                    class="flex items-center justify-center h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
                     <span class="mr-1"> Set Status</span>
                     <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -154,18 +154,18 @@
                         </div>
                         <div>
                             <textarea name="update_comment" id="update_comment" cols="30" rows="3"
-                                class="w-full text-sm bg-overlay1 rounded-xl placeholder-maroon border-none px-4 py-2 "
+                                class="w-full text-sm bg-overlay1 rounded-xl placeholder-white border-none px-4 py-2 focus:outline-none focus:ring focus:ring-maroon "
                                 placeholder="Add an update comment (optional)"></textarea>
                         </div>
                         <div class="flex items-center justify-between space-x-3">
                             <button type="button"
-                                class="flex items-center justify-center w-1/2 h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
+                                class="flex items-center justify-center w-1/2 h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
                                 <path fill-rule="evenodd"
                                     d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
                                     clip-rule="evenodd" />
                                 </svg>
                                 <span class="ml-1"> Attach</span>
-                            </button>\
+                            </button>
                             <button type="submit"
                                 class="flex items-center justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
                                 <span class="ml-1">Update</span>
@@ -185,14 +185,27 @@
         </div>
         <div class="flex items-center space-x-4 ml-6">
             <div class="bg-overlay0 font-semibold text-center rounded-xl px-3 py-2">
-                <div class="text-xl leading-snug">{{ $votes }}</div>
+                @if ($hasVoted)
+                    <div class="text-xl leading-snug text-maroon">{{ $votes }}</div>
+                @else
+                    <div class="text-xl leading-snug">{{ $votes }}</div>
+                @endif
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
             </div>
-            <button type="button"
-                class=" @if($hasVoted) disabled @endif flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3"
-                >
-                <span class="ml-1"> @if($hasVoted) Voted @else Vote @endif</span>
-            </button>
+            @if ($hasVoted)
+                <button type="button"
+                    class="flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3"
+                    >
+                    <span class="ml-1">Unvoted</span>
+                </button>
+            
+            @else
+                <button type="button"
+                    class="flex items-center justify-center h-11 w-32 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3"
+                    >
+                    <span class="ml-1">Vote</span>
+                </button>
+            @endif
         </div>
     </div>
 </div>  <!-- end idea-and-button -->
