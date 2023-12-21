@@ -4,6 +4,23 @@
 
 [x-cloak] { display: none !important; }
 
+
+.bg-red {
+    background-color: theme('colors.red');
+}
+.bg-yellow {
+    background-color: theme('colors.yellow');
+}
+.bg-pink {
+    background-color: theme('colors.pink');
+}
+.bg-green {
+    background-color: theme('colors.green');
+}
+.bg-mauve {
+    background-color: theme('colors.mauve');
+}
+
 /* vertical line between comments */
 .comments-container::before {
     position: absolute;

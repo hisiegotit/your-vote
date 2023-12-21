@@ -193,14 +193,14 @@
                 <div class="text-gray-400 text-xs leading-none">Votes</div>
             </div>
             @if ($hasVoted)
-                <button type="button"
+                <button wire:click.prevent="vote" type="button"
                     class="flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3"
                     >
                     <span class="ml-1">Unvoted</span>
                 </button>
             
             @else
-                <button type="button"
+                <button wire:click.prevent="vote" type="button"
                     class="flex items-center justify-center h-11 w-32 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3"
                     >
                     <span class="ml-1">Vote</span>

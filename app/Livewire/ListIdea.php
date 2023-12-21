@@ -18,6 +18,23 @@ class ListIdea extends Component
         $this->hasVoted = $idea->voted_by_user;
     }
 
+    public function vote()
+    {
+        if (!auth()->check()) {
+            return redirect(route('login'));
+        }
+
+        if ($this->hasVoted) {
+            $this->idea->unVote(auth()->user());
+            $this->votes--;
+            $this->hasVoted = false;
+        } else {
+            $this->idea->vote(auth()->user());
+            $this->votes++;
+            $this->hasVoted = true;
+        }
+    }
+
 
     public function render()
     {
