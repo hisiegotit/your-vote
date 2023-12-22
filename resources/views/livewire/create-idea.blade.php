@@ -3,7 +3,7 @@
         <input
             wire:model.defer="title"
             type="text"
-            class="w-full bg-overlay0 border-none text-sm text-maroon rounded-xl placeholder-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
+            class="w-full bg-overlay0 border-none text-sm text-white rounded-xl placeholder-subtext0 px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
             placeholder="Your idea">
         <p>
             @error('title')
@@ -26,7 +26,7 @@
     </div>
     <div>
         <textarea wire:model.refer="description" name="idea" id="idea" cols="30" rows="10"
-            class="border-none w-full bg-overlay0 rounded-xl placeholder-white text-sm text-maroon px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
+            class="border-none w-full bg-overlay0 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
             placeholder="Describe your idea"></textarea>
         <p>
             @error('description')

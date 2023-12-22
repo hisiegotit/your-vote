@@ -5,6 +5,9 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Idea extends Model
 {
@@ -14,24 +17,24 @@ class Idea extends Model
 
     protected $guarded = [];
 
-    public function user()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class); // user_id
+        return $this->belongsTo(User::class);
     }
 
-    public function category()
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class); // category_id
+        return $this->belongsTo(Category::class);
     }
 
-    public function status()
+    public function status(): BelongsTo
     {
-        return $this->belongsTo(Status::class); // status_id
+        return $this->belongsTo(Status::class);
     }
 
-    public function votes()
+    public function votes(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'votes'); // idea_id
+        return $this->belongsToMany(User::class, 'votes');
     }
 
     public function isVotedByUser(?User $user)
