@@ -30,7 +30,11 @@
     </div> <!-- end filters -->
     
     @foreach ($ideas as $idea)
-        <livewire:list-idea :idea="$idea" :votes="$idea->votes_count" />
+        <livewire:list-idea
+            :idea="$idea"
+            :votes="$idea->votes_count"
+            :key="$idea->id"
+            />
     @endforeach
     <div class="text-maroon mb-6">
         {{ $ideas->links() }}

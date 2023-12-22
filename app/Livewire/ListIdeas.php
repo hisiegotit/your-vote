@@ -5,9 +5,19 @@ namespace App\Livewire;
 use App\Models\Idea;
 use App\Models\Vote;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ListIdeas extends Component
 {
+    use WithPagination;
+
+    // protected $paginationTheme = "custom";
+
+    public function paginationView()
+    {
+        return 'simple-tailwind';
+    }
+
     public function render()
     {
         return view('livewire.list-ideas', [
