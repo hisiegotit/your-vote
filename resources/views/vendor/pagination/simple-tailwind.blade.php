@@ -8,7 +8,7 @@
             </span>
         @else
             <a href="{{ $paginator->previousPageUrl() }}" rel="prev"
-                class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-maroon bg-overlay0 border border-overlay0 leading-5 rounded-md hover:border-maroon focus:outline-none focus:ring focus:ring-maroon focus:border-maroon active:bg-maroon active:text-base transition ease-in-out duration-150">
+                class="relative inline-flex items-center bg-overlay0 font-bold text-sm rounded-xl px-4 py-2 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
                 {!! __('pagination.previous') !!}
             </a>
         @endif
@@ -16,7 +16,7 @@
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
             <a href="{{ $paginator->nextPageUrl() }}" rel="next"
-                class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-maroon bg-overlay0 border border-overlay0 leading-5 rounded-md hover:border-maroon focus:outline-none focus:ring focus:ring-maroon focus:border-maroon active:bg-maroon active:text-base transition ease-in-out duration-150">
+                class="relative inline-flex items-center bg-overlay0 font-bold text-sm rounded-xl px-4 py-2 transition ease-in duration-150 border border-overlay0 hover:border-maroon">
                 {!! __('pagination.next') !!}
             </a>
         @else
