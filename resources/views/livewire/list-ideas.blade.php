@@ -37,6 +37,6 @@
             />
     @endforeach
     <div class="text-maroon mb-6">
-        {{ $ideas->links() }}
+        {{ $ideas->links(data: ['scrollTo' => false]) }}
     </div>
 </div>
