@@ -42,10 +42,12 @@
                     @endauth
                 </div>
             @endif
+            @auth
             <a href="#">
-                <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp" alt="avatar"
+                <img src="{{ auth()->user()->getAvatar() }}" alt="avatar"
                     class="w-10 h-10 rounded-full">
             </a>
+            @endauth
         </div>
     </header>
     <main class="container mx-auto max-w-custom flex flex-col md:flex-row">

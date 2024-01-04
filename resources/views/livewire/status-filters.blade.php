@@ -10,7 +10,7 @@
                 @else
                 border-base
                 text-subtext0
-                @endif">All Ideas (26)</a></li>
+                @endif">All Ideas ({{ $statusCounter['all_statuses'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('Considering')" 
                 href=""
@@ -23,7 +23,7 @@
                 text-subtext0
                 @endif
                 hover:border-b-5">Considering
-                (6)</a></li>
+                ({{ $statusCounter['considering'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('In Progress')"
                 href=""
@@ -34,7 +34,7 @@
                 border-base
                 text-subtext0
                 @endif hover:border-yellow">In
-                progess (6)</a></li>
+                progess ({{ $statusCounter['in_progress'] }})</a></li>
         </ul>
         <ul class="flex uppercase font-semibold space-x-10 border-b-3 pb-3">
             <li><a 
@@ -47,7 +47,7 @@
                 border-base
                 text-subtext0
                 @endif hover:border-green hover:border-b-5">Implemented
-                (2)</a></li>
+                ({{ $statusCounter['implemented'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('Closed')"
                 href=""
@@ -58,7 +58,7 @@
                 border-base
                 text-subtext0
                 @endif hover:border-red hover:border-b-5">Closed
-                (5)</a></li>
+                ({{ $statusCounter['closed'] }})</a></li>
         </ul>
     </nav>
 </div>

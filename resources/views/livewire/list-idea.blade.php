@@ -57,7 +57,7 @@
                         <div>&bull;</div>
                         <div>3 comments</div>
                     </div>
-                    <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2 mr-2">
                         <div class=" {{ $idea->status->classes }}  text-xxs font-bold uppercase leading-none rounded-full text-center w-28 h-7 py-2 px-4">
                         {{ $idea->status->name }}</div>
                     </div>
