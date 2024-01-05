@@ -13,12 +13,14 @@ class ListIdeas extends Component
 {
     use WithPagination;
 
-    public $status = 'All';
+    public $status;
     public $category;
+    public $filter;
 
     protected $queryString = [
         'status',
-        'category'
+        'category',
+        'filter'
     ];
 
     protected $listeners = ['queryStringUpdatedStatus'];
@@ -26,6 +28,18 @@ class ListIdeas extends Component
     public function mount()
     {
         $this->status = request()->status ?? 'All';
+    }
+
+    public function updatedFilter()
+    {
+        if ($this->filter === 'My Ideas' && !auth()->check()) {
+            return redirect(route('login'));
+        }
+    }
+
+    public function updatingFilter()
+    {
+        $this->resetPage();
     }
 
     public function updatingCategory()
@@ -51,6 +65,12 @@ class ListIdeas extends Component
                 })
                 ->when($this->category && $this->category !== 'All categories', function ($query) use ($categories) {
                     return $query->where('category_id', $categories->pluck('id', 'name')->get($this->category));
+                })
+                ->when($this->filter && $this->filter === 'Top Voted', function ($query) {
+                    return $query->orderByDesc('votes_count'); // votes_count is a column in the ideas table
+                })
+                ->when($this->filter && $this->filter === 'My Ideas', function ($query) {
+                    return $query->where('user_id', auth()->id());
                 })
                 ->addSelect(['voted_by_user' => Vote::select('id')
                     ->where('user_id', auth()->id())

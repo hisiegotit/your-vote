@@ -9,11 +9,10 @@
             </select>
         </div>
         <div class="w-1/3">
-            <select name="other_filters" id="other_filters" class="w-full rounded-xl border-none px-4 py-2 bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
-                <option value="cate1">Filter 1</option>
-                <option value="cate2">Filter 2</option>
-                <option value="cate3">Filter 3</option>
-                <option value="cate4">Filter 4</option>
+            <select wire:model.live="filter" name="other_filters" id="other_filters" class="w-full rounded-xl border-none px-4 py-2 bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
+                <option value="No Filter">No Filter</option>
+                <option value="Top Voted">Top Voted</option>
+                <option value="My Ideas">My Ideas</option>
             </select>
         </div>
         <div class="w-2/3 relative">
