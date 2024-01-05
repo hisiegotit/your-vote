@@ -23,7 +23,7 @@ class StatusFilters extends Component
         $this->statusCounter = Status::getCount();
         $this->status = request()->status ?? 'All';
 
-        if (Route::currentRouteName() !== 'idea.index') {
+        if (Route::currentRouteName() === 'idea.show') {
             $this->status = null;
         }
     }
