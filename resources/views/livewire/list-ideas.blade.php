@@ -16,8 +16,8 @@
             </select>
         </div>
         <div class="w-2/3 relative">
-            <input type="search" placeholder="Find idea"
-                class="w-full rounded-xl px-4 py-2 pl-8 border-none placeholder-white bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
+            <input wire:model.live.debounce.250ms="search" type="search" placeholder="Find idea"
+                class="w-full rounded-xl px-4 py-2 pl-8 border-none placeholder- bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
             <div class="absolute top-0 flex items-center h-full ml-2">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     class="w-4 text-maroon">
@@ -28,13 +28,19 @@
         </div>
     </div> <!-- end filters -->
     
-    @foreach ($ideas as $idea)
+    @forelse ($ideas as $idea)
         <livewire:list-idea
             :idea="$idea"
+
             :votes="$idea->votes_count"
             :key="$idea->id"
             />
-    @endforeach
+    @empty
+        <div class="mx-auto text-overlay1 mt-10 w-60">
+            <img src="{{ asset('img/not-found.svg') }}" class="mx-auto opacity-80" alt="Not found image">
+            <div class="text-center font-bold mt-6 text-lg">No ideas were found...</div>
+        </div>
+    @endforelse
     <div class="text-maroon mb-6">
         {{-- {{ $ideas->links(data: ['scrollTo' => false]) }} --}}
         {{ $ideas->appends(request()->query())->links() }}
