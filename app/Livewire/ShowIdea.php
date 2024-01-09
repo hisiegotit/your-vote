@@ -11,11 +11,18 @@ class ShowIdea extends Component
     public $votes;
     public $hasVoted;
 
+    protected $listeners = ['statusWasUpdated'];
+
     public function mount(Idea $idea, $votes)
     {
         $this->idea = $idea;
         $this->votes = $votes;
         $this->hasVoted = $idea->isVotedByUser(auth()->user());
+    }
+
+    public function statusWasUpdated()
+    {
+        $this->idea->refresh();
     }
 
     public function vote()

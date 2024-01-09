@@ -6,6 +6,7 @@ use App\Models\Idea;
 use App\Http\Requests\StoreIdeaRequest;
 use App\Http\Requests\UpdateIdeaRequest;
 use App\Models\Vote;
+use Illuminate\Support\Facades\URL;
 
 class IdeaController extends Controller
 {
@@ -41,6 +42,7 @@ class IdeaController extends Controller
         return view('idea.show', [
             'idea' => $idea,
             'votes' => $idea->votes()->count(),
+            'returnUrl' => URL::previous() !== URL::full() ? URL::previous() : route('idea.index'),
         ]);
     }
 

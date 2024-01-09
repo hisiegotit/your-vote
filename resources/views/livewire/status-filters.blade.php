@@ -3,7 +3,7 @@
         <ul class="flex uppercase font-semibold space-x-10 border-b-3 pb-3">
             <li><a 
                 wire:click.prevent="setStatus('All')"
-                href=""
+                href="{{ route('idea.index', ['status' => 'All']) }}"
                 class="border-b-4 pb-3 @if($status == 'All')
                 border-maroon
                 text-maroon
