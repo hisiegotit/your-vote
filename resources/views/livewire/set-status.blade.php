@@ -1,11 +1,15 @@
 <div>
     <div
         x-data = "{ isOpen: false }"
-        x-init="window.livewire.on('statusWasUpdated', () => { isOpen = false })"
+        x-init="() => {
+            Livewire.on('statusWasUpdated', () => {
+                isOpen = false;
+            });
+        }"
         class="relative">
         <button @click = "isOpen = !isOpen" type="button"
             class="flex items-center justify-center h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
-            <span class="mr-1"> Set Status</span>
+            <span class="mr-1">Set Status</span>
             <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
             </svg>
@@ -77,15 +81,16 @@
                         <span class="ml-1"> Attach</span>
                     </button>
                     <button type="submit"
-                        class="flex items-center justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
+                        class="flex items-center justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3 disabled:opacity-50">
                         <span class="ml-1">Update</span>
                     </button>
                 </div>
                 <div>
                     <label class="font-normal inline-flex items-center">
-                        <input type="checkbox" name="notify_voters"
-                            class="rounded bg-text text-maroon focus:outline-none focus:ring focus:ring-violet-300"
-                            checked="">
+                        <input
+                            wire:model.live="notifyVoters"
+                            type="checkbox" name="notify_voters"
+                            class="rounded bg-text text-maroon focus:outline-none focus:ring focus:ring-violet-300">
                         <span class="ml-2">Notify all voters</span>
                     </label>
                 </div>
