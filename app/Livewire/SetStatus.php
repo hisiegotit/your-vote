@@ -2,10 +2,8 @@
 
 namespace App\Livewire;
 
-use App\Mail\IdeaStatusUpdatedMailable;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\NotifyVoters;
 use Livewire\Component;
-use Symfony\Component\HttpFoundation\Response;
 
 class SetStatus extends Component
 {
@@ -27,25 +25,11 @@ class SetStatus extends Component
         $this->idea->save();
 
         if ($this->notifyVoters) {
-            $this->notifyVoters();
+            NotifyVoters::dispatch($this->idea);
         }
 
         $this->dispatch('statusWasUpdated');
     }
-
-    public function notifyVoters()
-    {
-        $this->idea->votes()
-            ->select('name', 'email')
-            ->chunk(100, function ($voters) {
-                foreach ($voters as $user) {
-                    Mail::to($user)
-                        ->queue(new IdeaStatusUpdatedMailable($this->idea));
-                }
-            });
-    }
-
-
 
     public function render()
     {
