@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory(19)->create();
 
-        Category::factory()->create(['name' => 'Cat 1']);
-        Category::factory()->create(['name' => 'Cat 2']);
-        Category::factory()->create(['name' => 'Cat 3']);
-        Category::factory()->create(['name' => 'Cat 4']);
+        Category::factory()->create(['name' => 'Technology']);
+        Category::factory()->create(['name' => 'Sport']);
+        Category::factory()->create(['name' => 'Music']);
+        Category::factory()->create(['name' => 'Movies']);
 
         Status::factory()->create(['name' => 'Open', 'classes' => 'bg-pink text-base']);
         Status::factory()->create(['name' => 'Considering', 'classes' => 'bg-mauve text-base']);
@@ -36,8 +36,7 @@ class DatabaseSeeder extends Seeder
         Status::factory()->create(['name' => 'Implemented', 'classes' => 'bg-green text-base']);
         Status::factory()->create(['name' => 'Closed', 'classes' => 'bg-red text-base']);
 
-        Idea::factory(100)->create();
-
+        Idea::factory(100)->existing()->create();
 
         foreach (range(1, 20) as $user_id) {
             foreach (range(1, 100) as $idea_id) {

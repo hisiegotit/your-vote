@@ -13,7 +13,7 @@
                 @endif">All Ideas ({{ $statusCounter['all_statuses'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('Considering')" 
-                href=""
+                href="#"
                 class="transititon duration-150 ease-in border-b-4 pb-3 hover:border-mauve
                 @if($status == 'Considering')
                 border-mauve
@@ -26,7 +26,7 @@
                 ({{ $statusCounter['considering'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('In Progress')"
-                href=""
+                href="#"
                 class="transititon duration-150 ease-in border-b-4 pb-3 @if($status == 'In Progress')
                 border-yellow
                 text-yellow
@@ -39,7 +39,7 @@
         <ul class="flex uppercase font-semibold space-x-10 border-b-3 pb-3">
             <li><a 
                 wire:click.prevent="setStatus('Implemented')"
-                href=""
+                href="#"
                 class="transititon duration-150 ease-in border-b-4 pb-3 @if($status == 'Implemented')
                 border-green
                 text-green
@@ -50,7 +50,7 @@
                 ({{ $statusCounter['implemented'] }})</a></li>
             <li><a 
                 wire:click.prevent="setStatus('Closed')"
-                href=""
+                href="#"
                 class="transititon duration-150 ease-in border-b-4 pb-3 @if($status == 'Closed')
                 border-red
                 text-red

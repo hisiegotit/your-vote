@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Idea;
 use App\Models\User;
+use App\Models\Vote;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,6 +17,9 @@ class VoteFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    protected $model = Vote::class;
+
     public function definition(): array
     {
         return [
