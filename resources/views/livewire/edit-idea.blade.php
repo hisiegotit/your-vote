@@ -3,7 +3,10 @@
     x-data="{ isOpen: false }"
     x-show="isOpen"
     @keydown.escape.window="isOpen = false"
-    @edit-modal.window="isOpen=true"
+    @edit-modal.window="
+        isOpen=true
+        $nextTick(() => $refs.titleInput.focus())
+        "
     x-init="() => {
         Livewire.on('ideaWasUpdated', () => {
             isOpen = false;
@@ -32,7 +35,6 @@
         x-transition:leave="ease-in duration-200 transform transition-all"
         x-transition:leave-start="opacity-100 translate-y-0 sm:translate-y-0"
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-8"
-        
         class="fixed inset-0 z-10 w-screen overflow-y-auto">
       <div class="flex min-h-full items-end justify-center">
         <div class="border-2 border-maroon border-b-0 modal relative transform overflow-hidden rounded-tl-xl rounded-tr-xl bg-surface0 transition-all py-2 sm:w-full sm:max-w-lg">
@@ -40,7 +42,7 @@
                 @click="isOpen = false"
                 type="button"
                 class="btn flex justify-center align-center border-b-2 rounded-xl border-surface0 transition duration-200 ease-in hover:border-maroon cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 pb-2">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-8 h-8 pb-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25 12 21m0 0-3.75-3.75M12 21V3" />
                 </svg>                  
             </div>
@@ -53,6 +55,7 @@
                 <div>
                     <input
                         wire:model="title"
+                        x-ref="titleInput"
                         type="text"
                         class="w-full bg-surface1 border-none text-sm text-white rounded-xl placeholder-subtext0 px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
                         placeholder="Your idea">
@@ -95,7 +98,8 @@
                         </svg>
                         <span class="ml-1">Attach</span>
                     </button>
-                    <button type="submit"
+                    <button
+                        type="submit"
                         class="flex items-center justify-center w-1/2 h-11 text-xs text-surface1 bg-maroon font-semibold rounded-xl border border-maroon hover:border-surface1 transition duration-150 ease-in px-6 py-3">
                         <path
                             d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />

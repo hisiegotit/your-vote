@@ -55,7 +55,16 @@
                                 </a>
                             </li>
                             @endcan
-                           <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Delete idea</a></li>
+                            @can('delete', $idea)
+                            <li>
+                                 <a
+                                     href="#"
+                                     @click="$dispatch('delete-modal')"
+                                     class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
+                                     ">Delete  idea
+                                 </a>
+                             </li>
+                             @endcan
                            <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark as spam</a></li>
                        </ul>    
                     </button>
