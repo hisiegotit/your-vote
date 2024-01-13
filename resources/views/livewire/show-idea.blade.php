@@ -13,6 +13,11 @@
                     </a>
                 </h4>
                 <div class="text-white mt-3 text-justify">
+                    @admin
+                        @if ($idea->spam_marked > 0)
+                        <div class="text-red mb-2">Spam reports: {{ $idea->spam_marked }} </div>
+                        @endif
+                    @endadmin
                     {{ $idea->description }}
                 </div>
                 <div class="flex items-center justify-between mt-6">
@@ -31,6 +36,7 @@
                             {{ $idea->status->name }}</div>
                     </div>
                     <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
+                        @auth
                         <div class="relative">
 
                             <button x-on:click="isOpen = !isOpen"
@@ -65,10 +71,30 @@
                                  </a>
                              </li>
                              @endcan
-                           <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark as spam</a></li>
+                             <li>
+                                  <a
+                                      href="#"
+                                      @click="$dispatch('spam-modal')"
+                                      class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
+                                      ">Mark as spam
+                                  </a>
+                              </li>
+                             @admin
+                             @if ($idea->spam_marked > 0)
+                             <li>
+                                <a
+                                    href="#"
+                                    @click="$dispatch('not-a-spam-modal')"
+                                    class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
+                                    ">Not a spam
+                                </a>
+                            </li>
+                             @endif
+                             @endadmin
                        </ul>    
                     </button>
                 </div>
+                @endauth
                     </div>
                 </div>
             </div>
@@ -116,11 +142,9 @@
                     </form>
                 </div>
             </div>
-            @auth
-                @if (auth()->user()->isAdmin())
-                    <livewire:set-status :idea="$idea" />
-                @endif
-            @endauth
+            @admin    
+                <livewire:set-status :idea="$idea" />
+            @endadmin
         </div>
         <div class="flex items-center space-x-4 ml-6">
             <div class="bg-overlay0 font-semibold text-center rounded-xl px-3 py-2">

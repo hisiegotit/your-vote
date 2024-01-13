@@ -47,6 +47,11 @@
                     </a>
                 </h4>
                 <div class="text-white mt-3 line-clamp-3">
+                    @admin
+                        @if ($idea->spam_marked > 0)
+                        <div class="text-red mb-2">Spam reports: {{ $idea->spam_marked }} </div>
+                        @endif
+                    @endadmin
                     {{ $idea->description }}
                 </div>
                 <div class="flex items-center justify-between mt-6">
