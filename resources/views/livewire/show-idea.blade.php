@@ -45,6 +45,7 @@
                             x-show="isOpen"
                             @click.away="isOpen = false"
                            class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4 z-10">
+                           @can('update', $idea)
                            <li>
                                 <a
                                     href="#"
@@ -53,6 +54,7 @@
                                     ">Edit idea
                                 </a>
                             </li>
+                            @endcan
                            <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Delete idea</a></li>
                            <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark as spam</a></li>
                        </ul>    
