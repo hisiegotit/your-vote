@@ -10,25 +10,10 @@
             <span class="ml-2"> All idea</span>
         </a>
     </div>
-    {{-- Show Idea --}}
-    <livewire:show-idea :idea="$idea" :votes="$votes"/>
-    {{-- End Show Idea --}}
-    {{-- Modal Edit Idea --}}
-    @can('update', $idea)
-        <livewire:edit-idea :idea="$idea"/>
-    @endcan
-    {{-- End Modal Edit Idea --}}
-    {{-- Delete Idea --}}
-    @can('delete', $idea)
-        <livewire:delete-idea :idea="$idea"/>
-    @endcan 
-    {{-- End Delete Idea --}}
-    {{-- Spam Idea --}}
-        <livewire:spam-idea :idea="$idea"/>
-        <livewire:not-spam-idea :idea="$idea"/>
 
-    {{-- End Spam Idea --}}
+<livewire:show-idea :idea="$idea" :votes="$votes"/>
 
+<x-modals-container :idea="$idea"/>
 
     <div class="comments-container relative space-y-6 ml-22 my-8 mt-1 z-0">
         <div class="comment-container relative shadow-sm bg-surface0 rounded-xl flex mt-4 ">
