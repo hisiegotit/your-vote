@@ -25,7 +25,7 @@ class ShowIdeasTest extends TestCase
         ]);
 
         $statusConsidering = Status::factory()->create(['name' => 'Considering', 'classes' => 'bg-mauve text-base']);
-        $statusProgess = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+        $statusProgess = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-maroon text-base']);
 
         $ideaOne = Idea::factory()->create([
             'title' => 'My First Idea',
@@ -62,7 +62,7 @@ class ShowIdeasTest extends TestCase
             'name' => 'Category 1'
         ]);
 
-        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-maroon text-base']);
 
         $idea = Idea::factory()->create([
             'title' => 'My First Idea',
@@ -89,7 +89,7 @@ class ShowIdeasTest extends TestCase
             'name' => 'Category 1'
         ]);
 
-        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
+        $status = Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-maroon text-base']);
 
         Idea::factory(Idea::PAGINATION_COUNT + 1)->create([
             'category_id' => $category->id,

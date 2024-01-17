@@ -35,7 +35,7 @@
                         </form>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-maroon underline">Log in</a>
-
+                        <span class="text-xl ml-4 text-maroon">|</span>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-maroon underline">Register</a>
                         @endif
@@ -84,8 +84,12 @@
             </div>
         </div>
     </main>
+
     <livewire:scripts />
 
 </body>
 
 </html>
+@if (session('success'))
+    <x-success-notification :redirect="true" message-to-display="{{ (session('success')) }}" />
+@endif

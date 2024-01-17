@@ -44,9 +44,7 @@ class EditIdea extends Component
             'description' => $this->description,
         ]);
 
-        session()->flash('success', 'Idea was updated successfully!');
-
-        $this->dispatch('ideaWasUpdated');
+        $this->dispatch('ideaWasUpdated', 'Idea was updated successfully.');
     }
 
     public function render()

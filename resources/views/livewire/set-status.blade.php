@@ -41,10 +41,10 @@
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
-                                class="text-yellow border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                class="text-maroon border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
                                 name="status" value="3"
                                 wire:model="status">
-                            <span class="ml-2 text-yellow">In Progess</span>
+                            <span class="ml-2 text-maroon">In Progess</span>
                         </label>
                     </div>
                     <div>

@@ -25,7 +25,7 @@ class NotSpamIdea extends Component
         $this->idea->spam_marked = 0;
         $this->idea->save();
 
-        $this->dispatch('ideaWasNotASpam');
+        $this->dispatch('ideaWasNotASpam', 'Idea spam reports cleared.');
     }
 
     public function render()
