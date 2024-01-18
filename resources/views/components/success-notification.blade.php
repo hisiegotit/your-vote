@@ -21,11 +21,11 @@
             $nextTick(() => showNotification(messageToDisplay)) 
         @else
             Livewire.on('ideaWasUpdated', message => {
-                showNotification(message)
+                showNotification(message);
             });
 
             Livewire.on('ideaWasMarkedAsSpam', message => {
-                showNotification(message)
+                showNotification(message);
             });
 
             Livewire.on('ideaWasNotASpam', message => {

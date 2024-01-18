@@ -38,8 +38,8 @@
             :key="$idea->id"
             />
     @empty
-        <div class="mx-auto text-overlay1 mt-10 w-60">
-            <img src="{{ asset('img/not-found.gif') }}" style="mix-blend-mode: luminosity" class="mx-auto opacity-80" alt="Not found image">
+        <div class="mx-auto text-overlay1 mt-10 w-60" >
+            <img src="{{ asset('img/not-found.gif') }}" class="mx-auto opacity-80 mix-blend-luminosity" alt="Not found image" />
             <div class="text-center font-bold mt-6 text-lg">No ideas were found...</div>
         </div>
     @endforelse

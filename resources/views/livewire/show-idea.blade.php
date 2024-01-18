@@ -28,7 +28,7 @@
                         <div>&bull;</div>
                         <div>{{ $idea->category->name }}</div>
                         <div>&bull;</div>
-                        <di>3 comments</di>
+                        <div>{{ $idea->comments_count }} comments</div>
                     </div>
                     <div class="flex items-center space-x-2">
                         <div
