@@ -9,10 +9,12 @@ class IdeaComment extends Component
 {
 
     public $comment;
+    public $userId;
 
-    public function mount(Comment $comment)
+    public function mount(Comment $comment, $userId)
     {
         $this->comment = $comment;
+        $this->userId = $userId;
     }
 
     public function render()

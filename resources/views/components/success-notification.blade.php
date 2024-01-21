@@ -31,6 +31,10 @@
             Livewire.on('ideaWasNotASpam', message => {
                 showNotification(message)
             });
+
+            Livewire.on('commentWasPosted', message => {
+                showNotification(message)
+            });
         @endif
 
     }"

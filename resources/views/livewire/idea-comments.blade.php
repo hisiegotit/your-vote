@@ -4,6 +4,7 @@
         <livewire:idea-comment
             :key="$comment->id"
             :comment="$comment"
+            :userId="$idea->user->id"
         />
     @empty
     <div class="mx-auto text-overlay1 mt-10 w-60">

@@ -12,7 +12,7 @@
         </p>
     </div>
     <div>
-        <select wire:model.refer="category" name="add_category" id="add_category"
+        <select wire:model.defer="category" name="add_category" id="add_category"
             class="w-full bg-overlay0 border-none text-sm text-white rounded-xl focus:outline-none focus:ring focus:ring-maroon px-4 py-2">
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -25,7 +25,7 @@
         </p>
     </div>
     <div>
-        <textarea wire:model.refer="description" name="idea" id="idea" cols="30" rows="10"
+        <textarea wire:model.defer="description" name="idea" id="idea" cols="30" rows="10"
             class="border-none w-full bg-overlay0 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
             placeholder="Describe your idea"></textarea>
         <p>
