@@ -2,13 +2,19 @@
     x-data="{ isOpen: false }"
     class="relative"
     x-init="() => {
-        Livewire.on('commentWasPosted', () => {
-            isOpen = false
-        })
-    }"
+    Livewire.on('commentWasPosted', () => {
+        isOpen = false
+        window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })
+    })
+    
+}"
     >
     <button
-        @click="isOpen = !isOpen"
+        @click="
+            isOpen = !isOpen
+            if (isOpen) {
+                $nextTick(() => $refs.comment.focus())
+            }"
         type="button"
         class="flex items-center justify-center h-11 w-32 text-xs text-base bg-maroon text-surface1 font-semibold rounded-xl border border-maroon hover:border-overlay0  transition duration-150 ease-in px-6 py-3">
     <path fill-rule="evenodd"
@@ -26,7 +32,12 @@
         <form wire:submit.prevent="postComment" action="#" class="space-y-4 px-4 py-6" >
             <div>
                 <textarea
-                    wire:model="comment" name="post_comment" id="post_comment" cols="30" rows="4" type="text"
+                    x-ref="comment"
+                    wire:model="comment"
+                    name="post_comment"
+                    id="post_comment"
+                    cols="30"
+                    rows="4"
                     class="w-full text-sm bg-overlay1 rounded-xl placeholder-white border-none px-4 py-2 focus:outline-none focus:ring focus:ring-maroon"
                     placeholder="Go ahead. Share your thoughts..."></textarea>
                 @error('comment')
