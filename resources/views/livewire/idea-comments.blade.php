@@ -1,12 +1,20 @@
-<div class="comments-container relative space-y-6 ml-22 my-8 mt-1 z-0">
+<div>
 
-    @forelse ($comments as $comment)
+
+@if ($comments->isNotEmpty())
+<div class="comments-container relative space-y-6 ml-22 my-8 mt-1 z-0">
+    @foreach ($comments as $comment)
         <livewire:idea-comment
             :key="$comment->id"
             :comment="$comment"
             :userId="$idea->user->id"
         />
-    @empty
+    @endforeach
+</div>
+    <div class="my-8 md:ml-22">
+        {{ $comments->links('') }}
+    </div>
+    @else
     <div class="mx-auto text-overlay1 mt-10 w-60">
         <img src="{{ asset('img/not-found-comment.svg') }}" class="mix-blend-luminosity mx-auto opacity-80 " alt="Not found image">
         @auth
@@ -16,7 +24,6 @@
         <div class="text-center"><a class="underline text-maroon" href="{{ route('login') }}">Login now</a> to leave a comment!</div>
         @endauth
     </div>
-    @endforelse
     {{-- <div class="is-admin comment-container relative shadow-sm bg-surface0 rounded-xl flex mt-4 ">
         <div class="flex flex-1 px-4 py-4">
 
@@ -68,5 +75,7 @@
             </div>
         </div>
     </div> --}}
-
+    
+    @endif
 </div> <!-- end comments-container -->
+

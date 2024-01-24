@@ -14,7 +14,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <livewire:styles />
+    @livewireStyles
 </head>
 
 <body class="area font-sans bg-base text-white text-sm">
@@ -85,7 +85,7 @@
         </div>
     </main>
 
-    <livewire:scripts />
+    @livewireScripts
 
 </body>
 

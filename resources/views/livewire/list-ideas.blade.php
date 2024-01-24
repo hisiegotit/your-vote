@@ -20,7 +20,7 @@
         </div>
         <div class="w-2/3 relative">
             <input wire:model.live.debounce.250ms="search" type="search" placeholder="Find idea"
-                class="w-full rounded-xl px-4 py-2 pl-8 border-none placeholder- bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
+                class="w-full rounded-xl px-4 py-2 pl-8 border-none placeholder bg-surface1 focus:outline-none focus:ring focus:ring-maroon">
             <div class="absolute top-0 flex items-center h-full ml-2">
                 <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                     class="w-4 text-maroon">
@@ -44,6 +44,7 @@
         </div>
     @endforelse
     <div class="text-maroon mb-6">
-        {{ $ideas->appends(request()->query())->links() }}
+        {{ $ideas->links() }}
+        {{-- {{ $ideas->appends(request()->query())->links() }} --}}
     </div>
 </div>
