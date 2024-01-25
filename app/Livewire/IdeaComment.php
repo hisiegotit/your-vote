@@ -11,6 +11,14 @@ class IdeaComment extends Component
     public $comment;
     public $userId;
 
+    protected $listeners = ['commentWasUpdated'];
+
+    public function commentWasUpdated()
+    {
+        $this->comment->refresh();
+    }
+
+
     public function mount(Comment $comment, $userId)
     {
         $this->comment = $comment;

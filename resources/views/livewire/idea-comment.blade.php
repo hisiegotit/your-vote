@@ -35,17 +35,20 @@
                             x-cloak
                             x-show="isOpen"
                             @click.away="isOpen = false"
-                            class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4 z-30">
-                                {{-- @can('update', $idea) --}}
+                            class="absolute w-38 font-semibold bg-overlay1 shadow-dialog rounded-xl py-3 ml-4 z-100">
+                                @can('update', $comment)
                                 <li>
                                     <a
                                         href="#"
-                                        @click="$dispatch('edit-modal')"
+                                        @click.prevent="
+                                            isOpen = false
+                                            Livewire.dispatch('setEditComment',  { commentId: {{ $comment->id }} })
+                                        "
                                         class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
                                         ">Edit comment
                                     </a>
                                 </li>
-                                {{-- @endcan --}}
+                                @endcan
                                 <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark as spam</a></li>
                                 <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Delete comment</a></li>
                             </ul>
