@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class EditComment extends Component
 {
-    public $comment;
+    public Comment $comment;
     public $body;
 
     protected $rules = [

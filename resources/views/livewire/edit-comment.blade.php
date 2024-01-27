@@ -11,7 +11,6 @@
         isOpen = true
         $nextTick(() => $refs.editComment.focus())
     })
-
     "
     class="fixed z-10 inset-0 overflow-y-auto"
     aria-labelledby="modal-title"
@@ -36,9 +35,9 @@
             <div class="bg-surface0 px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                 <h3 class="text-center text-xl font-medium text-white">Edit Comment</h3>
 
-                <form wire:submit.prevent="updateComment" action="#" method="PUT" class="space-y-4 px-4 py-6">
+                <form wire:submit="updateComment" action="#" method="PUT" class="space-y-4 px-4 py-6">
                     <div>
-                        <textarea x-ref="editComment" wire:model.defer="body" name="idea" id="idea" cols="30" rows="4" class="border-none w-full bg-surface1 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon" placeholder="Enter your comment" required></textarea>
+                        <textarea x-ref="editComment" wire:model="body" name="idea" id="idea" cols="30" rows="4" class="border-none w-full bg-surface1 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon" placeholder="Enter your comment" required></textarea>
                         @error('body')
                             <p class="text-red text-xs mt-1">{{ $message }}</p>
                         @enderror

@@ -18,50 +18,50 @@
         @click.away = "isOpen = false"
         x-cloak x-show = "isOpen"
             class="absolute z-20 w-76 text-left font-semibold text-sm bg-surface1 shadow-dialog rounded-xl mt-2">
-            <form wire:submit.prevent="setStatus" action="#" class="space-y-4 px-4 py-6">
+            <form wire:submit="setStatus" action="#" class="space-y-4 px-4 py-6">
                 <div class="space-y-2">
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
                                 class="text-pink border-none bg-text focus:outline-none focus:ring focus:ring-pink"
                                 name="status" value="1"
-                                wire:model="status">
+                                wire:model.live="status">
                             <span class="ml-2">Open</span>
                         </label>
                     </div>
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
-                                class="text-mauve border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                class="text-mauve border-none bg-text focus:outline-none focus:ring focus:ring-mauve"
                                 name="status" value="2"
-                                wire:model="status">
+                                wire:model.live="status">
                             <span class="ml-2 text-mauve">Considering</span>
                         </label>
                     </div>
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
-                                class="text-maroon border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                class="text-yellow border-none bg-text focus:outline-none focus:ring focus:ring-yellow"
                                 name="status" value="3"
-                                wire:model="status">
-                            <span class="ml-2 text-maroon">In Progess</span>
+                                wire:model.live="status">
+                            <span class="ml-2 text-yellow">In Progess</span>
                         </label>
                     </div>
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
-                                class="text-green border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                class="text-green border-none bg-text focus:outline-none focus:ring focus:ring-green"
                                 name="status" value="4"
-                                wire:model="status">
+                                wire:model.live="status">
                             <span class="ml-2 text-green">Implemented</span>
                         </label>
                     </div>
                     <div>
                         <label class="inline-flex items-center">
                             <input type="radio" checked=""
-                                class="text-red border-none bg-text focus:outline-none focus:ring focus:ring-maroon"
+                                class="text-red border-none bg-text focus:outline-none focus:ring focus:ring-red"
                                 name="status" value="5"
-                                wire:model="status">
+                                wire:model.live="status">
                             <span class="ml-2 text-red">Closed</span>
                         </label>
                     </div>
@@ -90,7 +90,7 @@
                         <input
                             wire:model.live="notifyVoters"
                             type="checkbox" name="notify_voters"
-                            class="rounded bg-text text-maroon focus:outline-none focus:ring focus:ring-violet-300">
+                            class="rounded bg-text text-maroon focus:outline-none focus:ring focus:ring-maroon">
                         <span class="ml-2">Notify all voters</span>
                     </label>
                 </div>

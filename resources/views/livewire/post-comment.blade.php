@@ -6,7 +6,6 @@
         isOpen = false
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })
     })
-    
 }"
     >
     <button
@@ -29,7 +28,7 @@
     x-show = "isOpen"
     @click.away="isOpen = false"
         class="absolute z-10 w-104 text-left font-semibold text-sm bg-surface1 shadow-dialog rounded-xl mt-2">
-        <form wire:submit.prevent="postComment" action="#" class="space-y-4 px-4 py-6" >
+        <form wire:submit="postComment" action="#" class="space-y-4 px-4 py-6" >
             <div>
                 <textarea
                     x-ref="comment"
