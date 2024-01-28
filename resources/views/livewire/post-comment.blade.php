@@ -32,7 +32,7 @@
             <div>
                 <textarea
                     x-ref="comment"
-                    wire:model="comment"
+                    wire:model.live="comment"
                     name="post_comment"
                     id="post_comment"
                     cols="30"

@@ -13,12 +13,18 @@ class IdeaComments extends Component
 
     public $idea;
 
-    protected $listeners = ['commentWasPosted'];
+    protected $listeners = ['commentWasPosted', 'commentWasDeleted'];
 
     public function commentWasPosted()
     {
         $this->idea->refresh();
         $this->gotoPage($this->idea->comments()->paginate()->lastPage());
+    }
+
+    public function commentWasDeleted()
+    {
+        $this->idea->refresh();
+        $this->goToPage(1);
     }
 
     public function mount(Idea $idea)

@@ -7,6 +7,11 @@
         </div>
         <div class="w-full mx-4">
             <div class="text-white line-clamp-3">
+                @admin
+                @if ($comment->spam_reports > 0)
+                    <div class="text-red mb-2">Spam Reports: {{ $comment->spam_reports }}</div>
+                @endif
+            @endadmin
             {{ $comment->body }}
             </div>
             <div class="flex items-center justify-between mt-6">
@@ -49,8 +54,47 @@
                                     </a>
                                 </li>
                                 @endcan
-                                <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Mark as spam</a></li>
-                                <li><a href="#" class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3">Delete comment</a></li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        @click.prevent="
+                                            isOpen = false
+                                            Livewire.dispatch('setMarkAsSpamComment', { commentId: {{ $comment->id }}})
+                                        "
+                                        class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
+                                        ">Mark as spam
+                                    </a>
+                                </li>
+
+                                @admin
+                                @if ($comment->spam_reports > 0)
+                                <li>
+                                    <a
+                                        href="#"
+                                        @click.prevent="
+                                            isOpen = false
+                                            Livewire.dispatch('setMarkAsNotSpamComment', { commentId: {{ $comment->id }}})
+                                        "
+                                        class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3
+                                        ">Mark as not spam
+                                    </a>
+                                </li>
+                                @endif
+                                @endadmin
+                                @can('delete', $comment)
+                                <li>
+                                    <a
+                                        href="#"
+                                        @click.prevent="
+                                            isOpen = false
+                                            Livewire.dispatch('setDeleteComment', { commentId: {{ $comment->id }} })
+                                        "
+                                        class="hover:bg-overlay2 block transition ease-in duration-150 px-5 py-3"
+                                    >
+                                        Delete Comment
+                                    </a>
+                                </li>
+                                @endcan
                             </ul>
                         </div>
                     </div>

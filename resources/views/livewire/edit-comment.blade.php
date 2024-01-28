@@ -37,7 +37,7 @@
 
                 <form wire:submit="updateComment" action="#" method="PUT" class="space-y-4 px-4 py-6">
                     <div>
-                        <textarea x-ref="editComment" wire:model="body" name="idea" id="idea" cols="30" rows="4" class="border-none w-full bg-surface1 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon" placeholder="Enter your comment" required></textarea>
+                        <textarea x-ref="editComment" wire:model.live="body" name="idea" id="idea" cols="30" rows="4" class="border-none w-full bg-surface1 rounded-xl placeholder-subtext0 text-sm text-white px-4 py-2 focus:outline-none focus:ring focus:ring-maroon" placeholder="Enter your comment" required></textarea>
                         @error('body')
                             <p class="text-red text-xs mt-1">{{ $message }}</p>
                         @enderror
