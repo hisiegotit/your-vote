@@ -26,7 +26,7 @@
     position: absolute;
     display: block;
     top: 0;
-    left: -40px;
+    left: -38px;
     content: "";
     width: 3px;
     height: 100%;
@@ -38,7 +38,7 @@
     position: absolute;
     display: block;
     top: 57px;
-    left: -40px;
+    left: -38px;
     content: "";
     width: 23px;
     height: 3px;
@@ -50,14 +50,14 @@
     position: absolute;
     display: block;
     top: 60px;
-    left: -40px;
+    left: -38px;
     content: "";
     width: 3px;
     height: calc(100% - 60px);
     background: theme('colors.base');
 }
 
-.is-admin::before {
+.is-status-update::before {
     position: absolute;
     width: 38px;
     height: 38px;
@@ -67,9 +67,73 @@
     left: -58px;
     background: theme('colors.maroon');
     opacity: 1;
+    z-index: 1;
 }
 
-.is-admin {
+.is-status-update {
     border-width: 1px;
     border-color: theme('colors.maroon');
+}
+
+.is-status-update.comment-container:last-child::after {
+    left: -30px;
+}
+
+.status-open::before {
+    @apply bg-pink text-surface0;
+}
+.status-considering::before {
+    @apply bg-mauve text-surface0;
+}
+
+.status-in-progress::before {
+    @apply bg-yellow text-surface0;
+}
+
+.status-implemented::before {
+    @apply bg-green text-surface0;
+}
+
+.status-closed::before {
+    @apply bg-red text-surface0;
+}
+
+.status-open {
+    @apply border-2 border-pink;
+}
+
+.status-considering {
+    @apply border-2 border-mauve;
+}
+
+.status-in-progress {
+    @apply border-2 border-yellow;
+}
+
+.status-implemented {
+    @apply border-2 border-green;
+}
+
+.status-closed {
+    @apply border-2 border-red;
+}
+
+.status-open-badge {
+    @apply bg-pink text-surface0;
+}
+
+.status-considering-badge {
+    @apply bg-mauve text-surface0;
+}
+
+.status-in-progress-badge {
+    @apply bg-yellow text-surface0;
+}
+
+.status-implemented-badge {
+    @apply bg-green text-surface0;
+}
+
+.status-closed-badge {
+    @apply bg-red text-surface0;
 }

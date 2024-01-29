@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
         Category::factory()->create(['name' => 'Music']);
         Category::factory()->create(['name' => 'Movies']);
 
-        Status::factory()->create(['name' => 'Open', 'classes' => 'bg-pink text-base']);
-        Status::factory()->create(['name' => 'Considering', 'classes' => 'bg-mauve text-base']);
-        Status::factory()->create(['name' => 'In Progress', 'classes' => 'bg-yellow text-base']);
-        Status::factory()->create(['name' => 'Implemented', 'classes' => 'bg-green text-base']);
-        Status::factory()->create(['name' => 'Closed', 'classes' => 'bg-red text-base']);
+        Status::factory()->create(['name' => 'Open']);
+        Status::factory()->create(['name' => 'Considering']);
+        Status::factory()->create(['name' => 'In Progress']);
+        Status::factory()->create(['name' => 'Implemented']);
+        Status::factory()->create(['name' => 'Closed']);
 
         Idea::factory(100)->existing()->create();
 

@@ -1,9 +1,16 @@
-<div class="comment-container relative shadow-sm bg-surface0 rounded-xl flex mt-4 ">
+<div
+    class="@if ($comment->is_status_update) is-status-update {{ 'status-'.Str::kebab($comment->status->name)}}  @endif  comment-container relative bg-surface0 rounded-xl flex transition duration-500 ease-in mt-4"
+>
     <div class="flex flex-1 px-4 py-4">
         <div class="flex-none">
             <a href="#">
                 <img src="{{ $comment->user->getAvatar() }}" alt="avatar" class="w-14 h-14 rounded-xl">
             </a>
+            @if($comment->user->isAdmin())
+                <div class="text-center uppercase text-xxs mt-1 font-bold text-maroon">
+                    Admin
+                </div>
+            @endif
         </div>
         <div class="w-full mx-4">
             <div class="text-white line-clamp-3">
@@ -12,13 +19,25 @@
                     <div class="text-red mb-2">Spam Reports: {{ $comment->spam_reports }}</div>
                 @endif
             @endadmin
+            @if ($comment->is_status_update)
+            <h4 class="text-xl font-semibold mb-3">
+                Status Changed to "{{ $comment->status->name }}"
+            </h4>
+            @endif
+
+        <div class="mt-4 md:mt-0">
             {{ $comment->body }}
+        </div>
             </div>
             <div class="flex items-center justify-between mt-6">
                 <div class="flex items-center text-xs text-subtext1 font-semibold space-x-2">
-                    <div class="font-bold">{{ $comment->user->name }}</div>
-                    <div>&bull;</div>   
-                    {{-- @if ($comment->user->id === $comment->idea->user->id) --}}
+                    <div
+                        class="
+                            @if($comment->user->isAdmin())
+                                text-maroon 
+                            @endif 
+                            font-bold">{{ $comment->user->name }}</div>
+                    <div>&bull;</div>
                     @if ($comment->user->id === $userId)
                     <div class="rounded-full border bg-overlay2 px-3 py-1 text-surface0">OWNER</div>
                     <div>&bull;</div>
@@ -26,7 +45,7 @@
                     <div>{{ $comment->created_at->diffForHumans() }}</div>
                 </div>
                 @auth
-                <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
+                <div x-data="{ isOpen: false }" class="text-surface0 flex items-center space-x-2">
                     <div x-data="{ isOpen: false }" class="flex items-center space-x-2">
                         <div class="relative">
                             <button x-on:click="isOpen = !isOpen"

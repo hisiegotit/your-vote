@@ -24,7 +24,7 @@
         <div class="text-center"><a class="underline text-maroon" href="{{ route('login') }}">Login now</a> to leave a comment!</div>
         @endauth
     </div>
-    {{-- <div class="is-admin comment-container relative shadow-sm bg-surface0 rounded-xl flex mt-4 ">
+    {{-- <div class="is-status-update comment-container relative shadow-sm bg-surface0 rounded-xl flex mt-4 ">
         <div class="flex flex-1 px-4 py-4">
 
             <div class="flex-none">
