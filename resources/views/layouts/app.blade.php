@@ -24,15 +24,7 @@
             @if (Route::has('login'))
                 <div class="px-6 py-4">
                     @auth
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
-                                {{ __('Log out') }}
-                            </a>
-                        </form>
+                        <livewire:comment-notifications /> 
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-maroon underline">Log in</a>
                         <span class="text-xl ml-4 text-maroon">|</span>
@@ -61,18 +53,8 @@
                         <p class="text-lg mt-4">Login and create an idea.</p>
                         @endauth
                 </div>
-                @auth
                     <livewire:create-idea />
-                @else
-                <div class="my-6 text-center">
-                    <a href="{{ Route('login') }}" class="inline-block justify-center w-1/2 h-11 text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
-                    <span class="ml-1">Login</span>
-                    </a>
-                    <a href="{{ Route('register') }}" class="inline-block justify-center w-1/2 h-11 text-xs bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3 mt-4">
-                    <span class="ml-1">Sign Up</span>
-                    </a>
-                </div>
-                @endauth
+                
             </div>
 
         </div>
@@ -90,6 +72,10 @@
 </body>
 
 </html>
-@if (session('success'))
-    <x-success-notification :redirect="true" message-to-display="{{ (session('success')) }}" />
-@endif
+@if (session('error_message'))
+            <x-success-notification
+                type="error"
+                :redirect="true"
+                messageToDisplay="{{ (session('error_message')) }}"
+            />
+        @endif

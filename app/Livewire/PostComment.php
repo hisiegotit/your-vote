@@ -2,11 +2,15 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Traits\WithAuthRedirects;
 use App\Models\Comment;
+use App\Notifications\CommentPosted;
+use Illuminate\Http\Response;
 use Livewire\Component;
 
 class PostComment extends Component
 {
+    use WithAuthRedirects;
 
     public $idea;
     public $comment;
@@ -23,12 +27,12 @@ class PostComment extends Component
     public function postComment()
     {
         if (auth()->guest()) {
-            return redirect(route('login'));
+            abort(Response::HTTP_FORBIDDEN);
         }
 
         $this->validate();
 
-        Comment::create([
+        $newComment = Comment::create([
             'user_id' => auth()->id(),
             'idea_id' => $this->idea->id,
             'status_id' => 1,
@@ -36,6 +40,8 @@ class PostComment extends Component
         ]);
 
         $this->reset('comment');
+
+        $this->idea->user->notify(new CommentPosted($newComment));
 
         $this->dispatch('commentWasPosted', 'Comment was posted.');
     }

@@ -1,4 +1,7 @@
 <x-app-layout>
+    <x-slot name="title">
+        {{ $idea->title }} | Your Votes
+    </x-slot>
     <div>
         <a href="{{ $returnUrl }}" class="flex items-center font-semibold hover:underline">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">

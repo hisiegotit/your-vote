@@ -23,6 +23,13 @@ class SetStatus extends Component
     public function setStatus()
     {
 
+        if ($this->idea->status_id === (int) $this->status) {
+            $this->dispatch('statusWasUpdatedError', 'Status is the same!');
+
+            return;
+        }
+
+
         $this->idea->status_id = $this->status;
         $this->idea->save();
 

@@ -6,6 +6,15 @@
         isOpen = false
         window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'smooth' })
     })
+
+    @if (session('scrollToComment'))
+    const commentToScrollTo = document.querySelector('#comment-{{ session('scrollToComment') }}')
+    commentToScrollTo.scrollIntoView({ behavior: 'smooth'})
+    commentToScrollTo.classList.add('bg-green-50')
+    setTimeout(() => {
+        commentToScrollTo.classList.remove('bg-green-50')
+    }, 5000)
+@endif
 }"
     >
     <button
@@ -70,10 +79,16 @@
                 <div class="text-center">Please login or create an account to leave a comment.</div>
             
             <div class="flex items-center space-x-3 justify-center">
-                <a href="{{ route('login') }}" class="flex items-center justify-center h-11  text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
+                <a
+                wire:click.prevent="redirectToLogin"
+                href="{{ route('login') }}"
+                class="flex items-center justify-center h-11  text-xs text-base bg-maroon font-semibold rounded-xl border border-maroon hover:border-overlay0 transition duration-150 ease-in px-6 py-3">
                     <span>Login</span>
                 </a>
-                <a href="{{ route('register') }}" class="flex items-center justify-center  h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
+                <a
+                wire:click.prevent="redirectToRegister"
+                href="{{ route('register') }}"
+                class="flex items-center justify-center  h-11 text-xs text-maroon bg-overlay0 font-semibold rounded-xl border border-overlay0 hover:border-maroon transition duration-150 ease-in px-6 py-3">
                     <span class="ml-1">Create new account</span>
                 </a>
             </div>

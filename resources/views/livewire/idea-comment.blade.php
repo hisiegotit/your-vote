@@ -1,4 +1,5 @@
 <div
+id="comment-{{ $comment->id }}"
     class="@if ($comment->is_status_update) is-status-update {{ 'status-'.Str::kebab($comment->status->name)}}  @endif  comment-container relative bg-surface0 rounded-xl flex transition duration-500 ease-in mt-4"
 >
     <div class="flex flex-1 px-4 py-4">
@@ -26,7 +27,7 @@
             @endif
 
         <div class="mt-4 md:mt-0">
-            {{ $comment->body }}
+            {{$comment->body}}
         </div>
             </div>
             <div class="flex items-center justify-between mt-6">

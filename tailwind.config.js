@@ -35,6 +35,7 @@ export default {
                 76: "19rem",
                 175: "43.75rem",
                 104: "26rem",
+                128: "32rem",
                 175: "43.75rem",
             },
             colors: {

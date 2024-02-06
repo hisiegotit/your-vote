@@ -2,17 +2,21 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Traits\WithAuthRedirects;
 use App\Models\Idea;
 use Livewire\Component;
 
 class ShowIdea extends Component
 {
+    use WithAuthRedirects;
+
     public $idea;
     public $votes;
     public $hasVoted;
 
     protected $listeners = [
         'statusWasUpdated',
+        'statusWasUpdatedError',
         'ideaWasUpdated',
         'ideaWasMarkedAsSpam',
         'ideaWasNotASpam',
@@ -28,6 +32,11 @@ class ShowIdea extends Component
     }
 
     public function statusWasUpdated()
+    {
+        $this->idea->refresh();
+    }
+
+    public function statusWasUpdatedError()
     {
         $this->idea->refresh();
     }
@@ -59,8 +68,8 @@ class ShowIdea extends Component
 
     public function vote()
     {
-        if (!auth()->check()) {
-            return redirect(route('login'));
+        if (auth()->guest()) {
+            $this->redirectToLogin();
         }
 
         if ($this->hasVoted) {
