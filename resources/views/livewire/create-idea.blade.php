@@ -54,7 +54,7 @@
                 <span class="ml-1"> Submit</span>
             </button>
         </div>
-    {{-- 
+
         @if (session('success'))
                 <div
                     x-data="{ isVisible: true }"
@@ -67,8 +67,8 @@
                     class="text-green mt-4 text-center">
                     {{ session('success') }}
                 </div>
-                
-            @endif --}}
+
+            @endif
     </form>
     @else
         <div class="my-6 text-center">

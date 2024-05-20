@@ -65,7 +65,7 @@ class User extends Authenticatable
         return 'https://gravatar.com/avatar/'
             . md5(($this->email))
             . '?s=200'
-            . '&d=monsterid';
+            . '&d=identicon';
     }
 
     public function isAdmin()
